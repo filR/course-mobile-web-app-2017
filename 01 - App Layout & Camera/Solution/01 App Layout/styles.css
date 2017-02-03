@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+body {
+    background-color: #B2DBBF;
+    color: hsl(0, 0%, 20%);
+    font-size: 4vmin;
+    overflow: hidden;
+}
+
+
+/* -- app layout -- */
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* -- content -- */
+
+main {
+    overflow-y: auto;
+    padding: 2vmin;
+}
+
+
+/* -- header bar (top of screen) -- */
+
+header {
+    background-color: #70C1B3;
+    padding: 2.5vmin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 150%;
+}
+
+header i {
+    padding: 2vmin;
+    margin: -2vmin;
+}
+
+
+/* -- menu (slides in) -- */
+
+nav {
+    background-color: #247BA0;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: -100vw;
+    z-index: 100;
+    transition: 0.25s; /* speed close */
+    color: white;
+    font-size: 120%;
+}
+
+/* open nav */
+nav.show {
+    transition: 0.4s; /* speed open */
+    transform: translateX(100vw);
+}
+
+/* close button */
+nav i[action="close-menu"] {
+    padding: 3vmin;
+    font-size: 120%;
+}
+
+/* menu */
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 2vmin 0;
+    background: hsla(0, 0%, 100%, 0.1);
+}
+
+nav a:hover {
+    background: hsla(0, 0%, 100%, 0.2);    
+}
+
+nav i {
+    margin-right: 1vmin;
+    padding: 2vmin;
+}
+
+
+/* -- footer (bottom) -- */
+
+footer {
+    background-color: #70C1B3;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 2vmin;
+}
+
+footer a:hover {
+    background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+footer a span {
+    display: block;
+}
+
