@@ -31,6 +31,7 @@ body {
 main {
     overflow-y: auto;
     padding: 2vmin;
+    flex: 1;
 }
 
 
