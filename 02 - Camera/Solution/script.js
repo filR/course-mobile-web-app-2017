@@ -2,9 +2,9 @@
 
 // take image from file input and show in <img> element
 function readURL(input) {
-    var reader = new FileReader();
+    let reader = new FileReader();
 
-    reader.onload = function (e) {
+    reader.onload = e => {
         $('#preview').attr('src', e.target.result);
     }
 

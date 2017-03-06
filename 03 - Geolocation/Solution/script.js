@@ -34,7 +34,7 @@ function onNewPosition(data) {
         // update position
         distance += calcDistance(newPosition, lastPosition);
 
-        // draw path
+        // draw path on map
         drawLine(lastPosition, newPosition);
     }
 
