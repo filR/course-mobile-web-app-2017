@@ -13,6 +13,7 @@ function closeMenu() {
     $('nav').removeClass(`open`);
 }
 
-$('nav .fa-times').click(closeMenu);
+//$('nav .fa-times').click(closeMenu);
+$('[action=closeMenu]').click(closeMenu);
 
 
