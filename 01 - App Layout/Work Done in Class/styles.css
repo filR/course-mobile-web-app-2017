@@ -46,8 +46,27 @@ main header i:before {
 /* footer ----------------------- */
 
 main footer {
-    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
 }
+
+main footer a {
+    text-decoration: none;
+    color: black;
+    padding: 1em 0.75em;
+    text-align: center;
+}
+
+main footer a i,
+main footer a span {
+    display: block;
+}
+
+
+
+
 
 
 
