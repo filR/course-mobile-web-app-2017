@@ -22,6 +22,8 @@ div {
     top: 10vh;
     left: 0;
     right: 0;
+    
+    mix-blend-mode: hard-light;
 }
 
 
