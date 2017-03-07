@@ -4,7 +4,10 @@
     box-sizing: border-box;
 }
 
-
+body {
+    /* from coolors.co */
+    background-color: #BBDEF0;
+}
 
 
 
