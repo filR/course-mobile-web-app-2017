@@ -1,7 +1,8 @@
 
 function openMenu() {
-    // open the menu here
     console.log('-- Opening the menu');
+    
+    $('nav').addClass(`open`);
 }
 
 $('main header .fa-bars').click(openMenu);
