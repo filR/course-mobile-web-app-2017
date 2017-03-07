@@ -16,6 +16,28 @@ main {
 }
 
 
+/* nav ----------------------- */
+nav {
+    height: 100vh;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background-color: hsla(0, 0%, 0%, 0.6);
+    display: block;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a:last-child {
+    border-bottom: none;
+}
+
+
+
 /* content ----------------------- */
 main section {
     flex: 1;
@@ -44,7 +66,6 @@ main header i:before {
 
 
 /* footer ----------------------- */
-
 main footer {
     display: flex;
     justify-content: space-around;
