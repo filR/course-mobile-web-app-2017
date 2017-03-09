@@ -2,6 +2,7 @@
 
 let lastLat;
 let lastLong;
+let distance = 0;
 
 function updatePosition(pos) {
     let lat = pos.coords.latitude;
@@ -26,18 +27,26 @@ function updatePosition(pos) {
         icon: 'marker.png'
     });
     
-    // draw line
-    // if (lastLat && lastLong) {}
-    new google.maps.Polyline({
-        map: map,
-        path: [
-            { lat: lastLat, lng: lastLong },
-            { lat: lat, lng: long },
-        ],
-        geodisc: true,
-        strokeColor: "#FF0000",
-        strokeWidth: 4
-    });
+    
+    // if last position is set
+    if (lastLat && lastLong) {
+           
+        // draw line
+        new google.maps.Polyline({
+            map: map,
+            path: [
+                { lat: lastLat, lng: lastLong },
+                { lat: lat, lng: long },
+            ],
+            geodisc: true,
+            strokeColor: "#FF0000",
+            strokeWidth: 4
+        });
+
+        // update distance
+        distance += calcDistance(lat, long, lastLat, lastLong);
+        console.log('total distance:', distance, 'm');
+    }
     
     
     
@@ -67,7 +76,6 @@ function calcDistance(lat1, long1, lat2, long2) {
     let p2 = new google.maps.LatLng(lat2, long2);
     
     let dist = google.maps.geometry.spherical.computeDistanceBetween(p1, p2);
-    
     return dist;
 }
 
