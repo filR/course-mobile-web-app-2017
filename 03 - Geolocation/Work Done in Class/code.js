@@ -2,7 +2,9 @@
 
 let lastLat;
 let lastLong;
+let lastTime;
 let distance = 0;
+let speed = 0;
 
 function updatePosition(pos) {
     let lat = pos.coords.latitude;
@@ -47,6 +49,10 @@ function updatePosition(pos) {
         distance += calcDistance(lat, long, lastLat, lastLong);
         distance = Math.round(distance); // remove decimal places
         console.log('total distance:', distance, 'm');
+        
+        // current speed
+        speed = calcSpeed();
+        console.log('current speed is', speed);
     }
     
     
@@ -62,7 +68,8 @@ function updatePosition(pos) {
     
     // save current position as "last position:"
     lastLat = lat;
-    lastLong = long;    
+    lastLong = long;
+    lastTime = Date.now();
 }
 
 function onError(error) {
@@ -94,6 +101,15 @@ function calcDistance(lat1, long1, lat2, long2) {
     return dist;
 }
 
+
+// calculate current speed
+function calcSpeed(lat1, long1, time1, lat2, long2, time2) {
+    let distance = calcDistance(lat1, long1, lat2, long2);
+    let duration = time2 - time1;
+    
+    let speed = distance / duration;
+    return speed;
+}
 
 
 
