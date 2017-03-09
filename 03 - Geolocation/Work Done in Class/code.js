@@ -51,7 +51,7 @@ function updatePosition(pos) {
         console.log('total distance:', distance, 'm');
         
         // current speed
-        speed = calcSpeed();
+        speed = calcSpeed(lat, long, Date.now(), lastLat, lastLong, lastTime);
         console.log('current speed is', speed);
     }
     
@@ -105,7 +105,7 @@ function calcDistance(lat1, long1, lat2, long2) {
 // calculate current speed
 function calcSpeed(lat1, long1, time1, lat2, long2, time2) {
     let distance = calcDistance(lat1, long1, lat2, long2);
-    let duration = time2 - time1;
+    let duration = Math.abs(time2 - time1);
     
     let speed = distance / duration;
     return speed;
