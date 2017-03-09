@@ -27,6 +27,7 @@ function updatePosition(pos) {
     });
     
     // draw line
+    // if (lastLat && lastLong) {}
     new google.maps.Polyline({
         map: map,
         path: [
@@ -58,6 +59,18 @@ function onError(error) {
 }
 
 navigator.geolocation.watchPosition(updatePosition, onError);
+
+
+// calculate the distance between two points
+function calcDistance(lat1, long1, lat2, long2) {
+    let p1 = new google.maps.LatLng(lat1, long1);
+    let p2 = new google.maps.LatLng(lat2, long2);
+    
+    let dist = google.maps.geometry.spherical.computeDistanceBetween(p1, p2);
+    
+    return dist;
+}
+
 
 
 
