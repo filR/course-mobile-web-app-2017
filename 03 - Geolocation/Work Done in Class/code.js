@@ -21,3 +21,12 @@ function onError(error) {
 }
 
 navigator.geolocation.watchPosition(updatePosition, onError);
+
+
+
+let map = new google.maps.Map($('#map')[0], {
+    center: {lat: -34.397, lng: 150.644},
+    mapTypeId: google.maps.MapTypeId.SATELITE,
+    zoom: 15
+});
+
