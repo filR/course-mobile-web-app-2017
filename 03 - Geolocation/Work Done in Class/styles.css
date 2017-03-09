@@ -7,3 +7,7 @@
 body {
     background-color: hsl(150, 30%, 80%);
 }
+
+#map {
+    height: 100vh;
+}
