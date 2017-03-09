@@ -7,17 +7,43 @@ function updatePosition(pos) {
     
     console.log('my geo location is:', lat, long);
     
-    // draw static google image
-//    let url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
-//        lat + ',' + long +
-//        '&zoom=13&size=300x300&sensor=false';
-//    $('.geo-preview').attr('src', url);
     
     // centre map on position
     map.setCenter({
         lat: lat,
         lng: long
     });
+    
+    // draw marker
+    new google.maps.Marker({
+        map: map,
+        position: {
+            lat: lat,
+            lng: long
+        },
+        icon: 'marker.png'
+    });
+    
+    // draw line
+    new google.maps.Polyline({
+        map: map,
+        path: [
+            { lat: 10, lng: 20 },
+            { lat: -10, lng: -20 },
+        ],
+        geodisc: true,
+        strokeColor: "#FF0000",
+        strokeWidth: 4
+    });
+    
+    
+    
+    
+    // draw static google image
+//    let url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
+//        lat + ',' + long +
+//        '&zoom=13&size=300x300&sensor=false';
+//    $('.geo-preview').attr('src', url);
     
     
 }
