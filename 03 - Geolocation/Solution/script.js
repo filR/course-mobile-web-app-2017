@@ -16,6 +16,8 @@ function onNewPosition(data) {
         lng: data.coords.longitude
     }
 
+    console.log(newPosition);
+
     // draw current position as a static image
     //    previewLocation(newPosition);
 

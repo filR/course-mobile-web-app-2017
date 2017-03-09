@@ -1,4 +1,8 @@
 'use strict';
 
 
-console.log('my geo location is:');
+function updatePosition(pos) {
+    console.log('my geo location is:', pos);
+}
+
+navigator.geolocation.watchPosition(updatePosition);
