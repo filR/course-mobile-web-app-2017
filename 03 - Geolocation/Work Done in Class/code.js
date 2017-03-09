@@ -56,7 +56,13 @@ function updatePosition(pos) {
     }
     
     
-    updateHTML(lat, long, distance);
+//    updateHTML(lat, long, distance, speed);
+    updateHTML({
+        latitude: lat,
+        longitude: long,
+        distance: distance,
+        speed: speed
+    });
     
     
     // draw static google image
@@ -80,14 +86,18 @@ navigator.geolocation.watchPosition(updatePosition, onError);
 
 
 // update data on page
-function updateHTML(lat, long, distance) {
+//function updateHTML(lat, long, distance, speed) {
+function updateHTML(data) {
     
-    lat = Math.round(lat * 100) / 100; // round to two decimal points
-    $('#lat').text(lat);
+    data.latitude = Math.round(data.latitude * 100) / 100; // round to two decimal points
+    $('#lat').text(data.latitude);
     
-    long = Math.round(long * 100) / 100;
-    $('#long').text(long);
-    $('#dist').text(distance);
+    data.longitude = Math.round(data.longitude * 100) / 100;
+    $('#long').text(data.longitude);
+    $('#dist').text(data.distance);
+    
+    data.speed = Math.round(data.speed * 100) / 100;
+    $('#speed').text(data.speed);
 }
 
 
@@ -107,7 +117,7 @@ function calcSpeed(lat1, long1, time1, lat2, long2, time2) {
     let distance = calcDistance(lat1, long1, lat2, long2);
     let duration = Math.abs(time2 - time1);
     
-    let speed = distance / duration;
+    let speed = distance / duration * 1000; // m/s
     return speed;
 }
 
