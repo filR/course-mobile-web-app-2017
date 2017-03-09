@@ -50,6 +50,7 @@ function updatePosition(pos) {
     }
     
     
+    updateHTML(lat, long, distance);
     
     
     // draw static google image
@@ -69,6 +70,19 @@ function onError(error) {
 }
 
 navigator.geolocation.watchPosition(updatePosition, onError);
+
+
+// update data on page
+function updateHTML(lat, long, distance) {
+    
+    lat = Math.round(lat * 100) / 100; // round to two decimal points
+    $('#lat').text(lat);
+    
+    long = Math.round(long * 100) / 100;
+    $('#long').text(long);
+    $('#dist').text(distance);
+}
+
 
 
 // calculate the distance between two points
