@@ -7,7 +7,12 @@ function updatePosition(pos) {
     let long = pos.coords.longitude;
     
     
-    let url = 'https://maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + long + '&zoom=13&size=300x300&sensor=false';
+    let url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
+        lat +
+        ',' +
+        long +
+        '&zoom=13&size=300x300&sensor=false';
+    
     $('.geo-preview').attr('src', url);
     
     
