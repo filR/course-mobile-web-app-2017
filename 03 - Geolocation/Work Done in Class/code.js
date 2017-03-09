@@ -45,6 +45,7 @@ function updatePosition(pos) {
 
         // update distance
         distance += calcDistance(lat, long, lastLat, lastLong);
+        distance = Math.round(distance); // remove decimal places
         console.log('total distance:', distance, 'm');
     }
     

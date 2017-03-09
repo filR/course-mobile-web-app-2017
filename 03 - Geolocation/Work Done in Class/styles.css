@@ -11,3 +11,30 @@ body {
 #map {
     height: 100vh;
 }
+
+footer {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    position: fixed;
+    
+    background: white;
+    text-align: center;
+    padding: .5em 0;
+    font-family: monospace;
+    font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
