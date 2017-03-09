@@ -13,6 +13,12 @@ function updatePosition(pos) {
 //        '&zoom=13&size=300x300&sensor=false';
 //    $('.geo-preview').attr('src', url);
     
+    // centre map on position
+    map.setCenter({
+        lat: lat,
+        lng: long
+    });
+    
     
 }
 
@@ -25,8 +31,8 @@ navigator.geolocation.watchPosition(updatePosition, onError);
 
 
 let map = new google.maps.Map($('#map')[0], {
-    center: {lat: -34.397, lng: 150.644},
-    mapTypeId: google.maps.MapTypeId.SATELITE,
+    center: { lat: -34.397, lng: 150.644 },
+    mapTypeId: google.maps.MapTypeId.SATELLITE,
     zoom: 15
 });
 
