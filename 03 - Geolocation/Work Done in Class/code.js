@@ -1,5 +1,7 @@
 'use strict';
 
+let lastLat;
+let lastLong;
 
 function updatePosition(pos) {
     let lat = pos.coords.latitude;
@@ -28,8 +30,8 @@ function updatePosition(pos) {
     new google.maps.Polyline({
         map: map,
         path: [
-            { lat: 10, lng: 20 },
-            { lat: -10, lng: -20 },
+            { lat: lastLat, lng: lastLong },
+            { lat: lat, lng: long },
         ],
         geodisc: true,
         strokeColor: "#FF0000",
@@ -46,6 +48,9 @@ function updatePosition(pos) {
 //    $('.geo-preview').attr('src', url);
     
     
+    // save current position as "last position:"
+    lastLat = lat;
+    lastLong = long;    
 }
 
 function onError(error) {
