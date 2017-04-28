@@ -96,7 +96,7 @@ function loop() {
     // collision player 2
     if (ball.y > player2.y &&
         ball.y < player2.y + player2.height &&
-        ball.x - ball.radius < player2.x + player2.width) {
+        ball.x + ball.radius > player2.x) {
         ball.speedX *= -1;    
     }
     
