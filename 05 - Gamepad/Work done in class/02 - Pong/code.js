@@ -86,6 +86,20 @@ function loop() {
         ball.speedY *= -1;
     }
     
+    // collision player 1
+    if (ball.y > player.y &&
+        ball.y < player.y + player.height &&
+        ball.x - ball.radius < player.x + player.width) {
+        ball.speedX *= -1;    
+    }
+    
+    // collision player 2
+    if (ball.y > player2.y &&
+        ball.y < player2.y + player2.height &&
+        ball.x - ball.radius < player2.x + player2.width) {
+        ball.speedX *= -1;    
+    }
+    
     
     // draw
     drawCircle(ctx, ball.x, ball.y, ball.radius, ball.color);
