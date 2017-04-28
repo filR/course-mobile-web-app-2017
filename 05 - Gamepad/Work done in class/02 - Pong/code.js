@@ -53,11 +53,7 @@ function loop() {
     
     // user input
     let gamepad = navigator.getGamepads()[0];
-    if (gamepad) {
-        if (Math.abs(gamepad.axes[0]) > 0.1) { // prevent gamepad jitter
-            player.x += gamepad.axes[0] * player.speed;
-        }
-        
+    if (gamepad) {        
         if (Math.abs(gamepad.axes[1]) > 0.1) {
             player.y += gamepad.axes[1] * player.speed;
         }
@@ -81,7 +77,7 @@ function loop() {
     
     // draw
     drawCircle(ctx, ball.x, ball.y, ball.radius, ball.color);
-    drawRectangle(ctx, player.x, player.y, player.width, player.width, player.color);
+    drawRectangle(ctx, player.x, player.y, player.width, player.height, player.color);
     
     window.requestAnimationFrame(loop);
 }
