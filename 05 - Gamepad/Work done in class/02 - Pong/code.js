@@ -53,8 +53,13 @@ function loop() {
     // user input
     let gamepad = navigator.getGamepads()[0];
     if (gamepad) {
-        player.x += gamepad.axes[0] * player.speed;
-        player.y += gamepad.axes[1] * player.speed;
+        if (Math.abs(gamepad.axes[0]) > 0.1) {
+            player.x += gamepad.axes[0] * player.speed;
+        }
+        
+        if (Math.abs(gamepad.axes[1]) > 0.1) {
+            player.y += gamepad.axes[1] * player.speed;
+        }
     }
     
     // update
