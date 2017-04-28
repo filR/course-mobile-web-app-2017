@@ -88,6 +88,9 @@ function loop() {
         if (gamepad.buttons[0].value > 0.5) {
             alert('xxxx');
         }
+        if (gamepad.buttons[1].value > 0.5) {
+            canvas.style.background = 'blue';
+        }
     }
     
     // update
@@ -95,8 +98,8 @@ function loop() {
     ball.y += ball.speedY;
     
     // collision
-    if (ball.x < 0 ||
-        ball.x > canvas.width) {
+    if (ball.x < 20 ||
+        ball.x > canvas.width - 20) {
         newBall();
     }
     
