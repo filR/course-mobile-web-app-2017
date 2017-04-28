@@ -28,8 +28,8 @@ function drawRectangle(ctx, x, y, width, height, color) {
 let ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
-    speedX: 1,
-    speedY: 1,
+    speedX: 3,
+    speedY: 3,
     radius: 10,
     color: 'white'
 }
@@ -53,7 +53,7 @@ function loop() {
     // user input
     let gamepad = navigator.getGamepads()[0];
     if (gamepad) {
-        if (Math.abs(gamepad.axes[0]) > 0.1) {
+        if (Math.abs(gamepad.axes[0]) > 0.1) { // prevent gamepad jitter
             player.x += gamepad.axes[0] * player.speed;
         }
         
@@ -67,6 +67,15 @@ function loop() {
     ball.y += ball.speedY;
     
     // collision
+    if (ball.x < 0 ||
+        ball.x > canvas.width) {
+        ball.speedX *= -1;
+    }
+    
+    if (ball.y < 0 ||
+        ball.y > canvas.height) {
+        ball.speedY *= -1;
+    }
     
     // draw
     drawCircle(ctx, ball.x, ball.y, ball.radius, ball.color);
