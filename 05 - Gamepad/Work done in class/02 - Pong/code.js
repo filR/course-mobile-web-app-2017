@@ -44,6 +44,15 @@ let player = {
     speed: 5
 }
 
+let player2 = {
+    x: canvas.width - 20,
+    y: 100,
+    width: 10,
+    height: 300,
+    color: 'white',
+    speed: 5
+}
+
 
 // gameloop
 function loop() {
@@ -56,6 +65,9 @@ function loop() {
     if (gamepad) {        
         if (Math.abs(gamepad.axes[1]) > 0.1) {
             player.y += gamepad.axes[1] * player.speed;
+        }        
+        if (Math.abs(gamepad.axes[3]) > 0.1) {
+            player2.y += gamepad.axes[3] * player2.speed;
         }
     }
     
@@ -78,6 +90,7 @@ function loop() {
     // draw
     drawCircle(ctx, ball.x, ball.y, ball.radius, ball.color);
     drawRectangle(ctx, player.x, player.y, player.width, player.height, player.color);
+    drawRectangle(ctx, player2.x, player2.y, player2.width, player2.height, player2.color);
     
     window.requestAnimationFrame(loop);
 }
