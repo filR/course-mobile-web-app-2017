@@ -15,4 +15,13 @@ function drawCircle(ctx, x, y, radius, color) {
     ctx.fill();
 }
 
+function drawRectangle(ctx, x, y, width, height, color) {
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.rect(x, y, width, height);
+    ctx.closePath();
+    ctx.fill();
+}
+
 drawCircle(ctx, 100, 100, 50, 'white');
+drawRectangle(ctx, 200, 200, 50, 50, 'white');
