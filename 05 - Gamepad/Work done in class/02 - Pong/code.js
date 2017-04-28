@@ -23,5 +23,51 @@ function drawRectangle(ctx, x, y, width, height, color) {
     ctx.fill();
 }
 
-drawCircle(ctx, 100, 100, 50, 'white');
-drawRectangle(ctx, 200, 200, 50, 50, 'white');
+
+// ball
+let ball = {
+    x: canvas.width / 2,
+    y: canvas.height / 2,
+    speedX: 1,
+    speedY: 1,
+    radius: 10,
+    color: 'white'
+}
+
+// player
+let player = {
+    x: 100,
+    y: 100,
+    width: 50,
+    color: 'white'
+}
+
+
+// gameloop
+function loop() {
+    
+    // clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // user input
+    
+    // update
+    ball.x += ball.speedX;
+    ball.y += ball.speedY;
+    
+    // collision
+    
+    // draw
+    drawCircle(ctx, ball.x, ball.y, ball.radius, ball.color);
+    drawRectangle(ctx, 200, 200, 50, 50, 'white');
+    
+    window.requestAnimationFrame(loop);
+}
+
+loop(); // start the loop
+
+
+
+
+
+
