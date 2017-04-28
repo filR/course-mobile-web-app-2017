@@ -57,9 +57,15 @@ function newBall() {
     ball.x = canvas.width / 2;
     ball.y = canvas.height / 2;
     
-    let rand = Math.random() * 6 + 4;
+    let rand = Math.random() * 4 + 3;
     ball.speedX = (Math.random() > 0.5) ? rand : -rand;
     ball.speedY = (Math.random() > 0.5) ? rand : -rand;
+    
+//    if (Math.random() > 0.5) {
+//        ball.speedX = rand;
+//    } else {
+//        ball.speedX = -rand;
+//    }
 }
 
 // gameloop
@@ -76,6 +82,11 @@ function loop() {
         }        
         if (Math.abs(gamepad.axes[3]) > 0.1) {
             player2.y += gamepad.axes[3] * player2.speed;
+        }
+        
+        
+        if (gamepad.buttons[0].value > 0.5) {
+            alert('xxxx');
         }
     }
     
