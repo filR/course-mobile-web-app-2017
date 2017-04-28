@@ -53,6 +53,14 @@ let player2 = {
     speed: 10
 }
 
+function newBall() {
+    ball.x = canvas.width / 2;
+    ball.y = canvas.height / 2;
+    
+    let rand = Math.random() * 6 + 4;
+    ball.speedX = (Math.random() > 0.5) ? rand : -rand;
+    ball.speedY = (Math.random() > 0.5) ? rand : -rand;
+}
 
 // gameloop
 function loop() {
@@ -78,7 +86,7 @@ function loop() {
     // collision
     if (ball.x < 0 ||
         ball.x > canvas.width) {
-        ball.speedX *= -1;
+        newBall();
     }
     
     if (ball.y < 0 ||
