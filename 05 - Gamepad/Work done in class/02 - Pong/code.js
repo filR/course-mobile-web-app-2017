@@ -36,9 +36,10 @@ let ball = {
 
 // player
 let player = {
-    x: 100,
+    x: 10,
     y: 100,
-    width: 50,
+    width: 10,
+    height: 300,
     color: 'white',
     speed: 5
 }
@@ -76,6 +77,7 @@ function loop() {
         ball.y > canvas.height) {
         ball.speedY *= -1;
     }
+    
     
     // draw
     drawCircle(ctx, ball.x, ball.y, ball.radius, ball.color);
