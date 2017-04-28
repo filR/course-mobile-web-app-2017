@@ -39,18 +39,18 @@ let player = {
     x: 10,
     y: 100,
     width: 10,
-    height: 300,
+    height: 200,
     color: 'white',
-    speed: 5
+    speed: 10
 }
 
 let player2 = {
     x: canvas.width - 20,
     y: 100,
     width: 10,
-    height: 300,
+    height: 200,
     color: 'white',
-    speed: 5
+    speed: 10
 }
 
 
