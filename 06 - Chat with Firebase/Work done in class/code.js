@@ -38,13 +38,19 @@ firebase.database().ref('messages').limitToLast(20).on('child_added', function (
 // send messages
 
 $('#message-input').on('keypress', function (event) {
-        console.log('bleeeeep');               
+    if (event.keyCode == 13) { // enter
+   
+        let name = $('#username').val();
+        let text = $('#message-input').val();
+        
+         firebase.database().ref('messages').push({
+            name: name,
+            text: text
+        });
+        
+        $('#message-input').val(''); // empty out input
+    }
 });
-
-// firebase.database().ref('messages').push({
-//    name: 'xx',
-//    text: 'xx'
-//});
 
 
 
