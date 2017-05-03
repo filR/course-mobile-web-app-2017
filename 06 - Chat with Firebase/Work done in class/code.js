@@ -5,7 +5,7 @@ firebase.initializeApp({
     databaseURL: "https://chat-chat-chat-chat.firebaseio.com"
 });
 
-
+// get messages
 firebase.database().ref('messages').limitToLast(20).on('child_added', function (data) {
     
     // get name and message
@@ -32,6 +32,25 @@ firebase.database().ref('messages').limitToLast(20).on('child_added', function (
     // scroll to last message
     $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
 });
+
+
+
+// send messages
+
+$('#message-input').on('keypress', function (event) {
+        console.log('bleeeeep');               
+});
+
+// firebase.database().ref('messages').push({
+//    name: 'xx',
+//    text: 'xx'
+//});
+
+
+
+
+
+
 
 
 
