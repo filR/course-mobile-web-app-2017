@@ -29,6 +29,8 @@ firebase.database().ref('messages').limitToLast(20).on('child_added', function (
     // append element to our container
     $('#messages').append(element);
     
+    // scroll to last message
+    $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
 });
 
 
