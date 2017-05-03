@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 li {
@@ -15,8 +16,25 @@ body {
     font-family: sans-serif;
 }
 
+header {
+    padding-bottom: 3vmin;
+}
+
 #messages {
     flex-grow: 1;
     overflow-y: auto;
     padding: 4vmin 0;
 }
+
+#messages strong {
+    margin-right: 0.5em;
+}
+
+#messages strong:after {
+    content: ":";
+}
+
+
+
+
+
